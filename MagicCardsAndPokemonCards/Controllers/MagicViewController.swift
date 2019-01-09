@@ -24,6 +24,7 @@ class MagicViewController: UIViewController {
             } else if let magicCards = magicCards {
                 self.allMagicCards = magicCards
                 //dump(self.allMagicCards)
+                //Hello!!!
             }
         }
     }
