@@ -9,22 +9,28 @@
 import UIKit
 
 class PokemonDetailViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var pokemonCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension PokemonDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "PokemonDetail", for: indexPath) as? PokemonCell else { fatalError("PokemonDetailCell not found") }
+        return cell
     }
-    */
-
+}
+extension PokemonDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 400, height: 400)
+    }
 }

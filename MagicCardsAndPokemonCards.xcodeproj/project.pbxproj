@@ -22,6 +22,8 @@
 		2E8250B621E6686100158E41 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250B521E6686100158E41 /* PokemonDetailViewController.swift */; };
 		2E8250B821E6691100158E41 /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250B721E6691100158E41 /* PokemonCard.swift */; };
 		2E8250BB21E6699300158E41 /* MagicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250BA21E6699300158E41 /* MagicCard.swift */; };
+		2EE8379421E7D6EC005CAAB3 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8379321E7D6EC005CAAB3 /* PokemonCell.swift */; };
+		2EE8379621E7D700005CAAB3 /* PokemonDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8379521E7D700005CAAB3 /* PokemonDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		2E8250B521E6686100158E41 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		2E8250B721E6691100158E41 /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
 		2E8250BA21E6699300158E41 /* MagicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCard.swift; sourceTree = "<group>"; };
+		2EE8379321E7D6EC005CAAB3 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		2EE8379521E7D700005CAAB3 /* PokemonDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +113,10 @@
 		2E8250AC21E6675000158E41 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2E82509421E6657700158E41 /* MagicViewController.swift */,
-				2E8250B121E6682E00158E41 /* MagicDetailViewController.swift */,
 				2E8250B321E6684700158E41 /* PokemonViewController.swift */,
 				2E8250B521E6686100158E41 /* PokemonDetailViewController.swift */,
+				2E82509421E6657700158E41 /* MagicViewController.swift */,
+				2E8250B121E6682E00158E41 /* MagicDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				2E8250B721E6691100158E41 /* PokemonCard.swift */,
+				2EE8379321E7D6EC005CAAB3 /* PokemonCell.swift */,
+				2EE8379521E7D700005CAAB3 /* PokemonDetailCell.swift */,
 				2E8250BA21E6699300158E41 /* MagicCard.swift */,
 			);
 			name = Model;
@@ -201,6 +207,7 @@
 				2E8250B821E6691100158E41 /* PokemonCard.swift in Sources */,
 				2E8250BB21E6699300158E41 /* MagicCard.swift in Sources */,
 				2E8250AE21E667AB00158E41 /* MagicAPIClient .swift in Sources */,
+				2EE8379421E7D6EC005CAAB3 /* PokemonCell.swift in Sources */,
 				2E82509521E6657700158E41 /* MagicViewController.swift in Sources */,
 				2E8250B421E6684700158E41 /* PokemonViewController.swift in Sources */,
 				2E8250A521E6666700158E41 /* NetworkHelper.swift in Sources */,
@@ -209,6 +216,7 @@
 				2E8250B221E6682E00158E41 /* MagicDetailViewController.swift in Sources */,
 				2E8250B621E6686100158E41 /* PokemonDetailViewController.swift in Sources */,
 				2E82509321E6657700158E41 /* AppDelegate.swift in Sources */,
+				2EE8379621E7D700005CAAB3 /* PokemonDetailCell.swift in Sources */,
 				2E8250A721E6668A00158E41 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

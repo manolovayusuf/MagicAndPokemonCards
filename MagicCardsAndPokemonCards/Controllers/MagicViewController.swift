@@ -11,6 +11,7 @@ import UIKit
 class MagicViewController: UIViewController {
     
     @IBOutlet weak var magicCollectionView: UICollectionView!
+    
     var allMagicCards = [MagicCard]()
     
     override func viewDidLoad() {
@@ -27,8 +28,6 @@ class MagicViewController: UIViewController {
             }
         }
     }
-
-
 }
 
 extension MagicViewController: UICollectionViewDataSource {
