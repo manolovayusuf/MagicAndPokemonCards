@@ -13,4 +13,5 @@ class MagicDetailCell: UICollectionViewCell {
     @IBOutlet weak var magicNameLabel: UILabel!
     @IBOutlet weak var magicLanguageLabel: UILabel!
     @IBOutlet weak var magicDescriptionTextView: UITextView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class MagicDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var detailMagicCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -19,7 +19,6 @@ class MagicDetailViewController: UIViewController {
         detailMagicCollectionView.delegate = self
     }
 
-
 }
 
 extension MagicDetailViewController: UICollectionViewDataSource {
@@ -28,8 +27,7 @@ extension MagicDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = detailMagicCollectionView.dequeueReusableCell(withReuseIdentifier: "MagicDetailCell", for: indexPath) as? MagicDetailCell else { fatalError("MagicDetailCell") }
-        
+        guard let cell = detailMagicCollectionView.dequeueReusableCell(withReuseIdentifier: "MagicDetailCell", for: indexPath) as? MagicDetailCell else { fatalError("MagicDetailCell Not Found!") }
         return cell
     }
 }

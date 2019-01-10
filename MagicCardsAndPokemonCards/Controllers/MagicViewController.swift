@@ -44,6 +44,24 @@ extension MagicViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = magicCollectionView.dequeueReusableCell(withReuseIdentifier: "MagicCell", for: indexPath) as? MagicCell else { fatalError("MagicCell not found") }
+        let magicCard = allMagicCards[indexPath.row]
+        
+
+        if let imageUrl = magicCard.imageUrl {
+            if let image = ImageHelper.shared.image(forKey: imageUrl.absoluteString as NSString) {
+                cell.magicCardImage.image = image
+            } else {
+                cell.activityIndicator.startAnimating()
+                ImageHelper.shared.fetchImage(urlString: imageUrl.absoluteString) { (appError, image) in
+                    if let appError = appError {
+                        print(appError.errorMessage())
+                    } else if let image = image {
+                        cell.magicCardImage.image = image
+                    }
+                    cell.activityIndicator.stopAnimating()
+                }
+            }
+        }
         
         return cell
     }
@@ -51,7 +69,7 @@ extension MagicViewController: UICollectionViewDataSource {
 
 extension MagicViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 400, height: 400)
+        return CGSize.init(width: 250/2, height: 350/2)
     }
 }
 

@@ -38,7 +38,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kuk-x3-Qyc">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="131"/>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mPl-ll-fTq">
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mPl-ll-fTq">
                                                     <rect key="frame" x="66.5" y="47" width="37" height="37"/>
                                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
@@ -55,7 +55,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="activityIndicator" destination="mPl-ll-fTq" id="Y8M-ym-Sda"/>
-                                            <outlet property="magicCardImage" destination="Kuk-x3-Qyc" id="uu2-9b-rL1"/>
+                                            <outlet property="magicCardImage" destination="Kuk-x3-Qyc" id="CmW-o5-IPM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -296,7 +296,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AsL-Qa-lFp">
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AsL-Qa-lFp">
                                                     <rect key="frame" x="130.5" y="119" width="37" height="37"/>
                                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
@@ -326,10 +326,11 @@
                                             <constraint firstItem="gno-rp-44e" firstAttribute="top" secondItem="aeQ-D4-Dn3" secondAttribute="top" constant="10" id="y3b-7i-r94"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="magicDescriptionTextView" destination="gRY-JE-3cm" id="S1M-fy-YKg"/>
-                                            <outlet property="magicImage" destination="gno-rp-44e" id="3Ma-np-ux7"/>
-                                            <outlet property="magicLanguageLabel" destination="25h-jq-Z0G" id="h4L-F0-FC9"/>
-                                            <outlet property="magicNameLabel" destination="SLd-Ve-dpp" id="0Nk-Xc-gbC"/>
+                                            <outlet property="activityIndicator" destination="AsL-Qa-lFp" id="0iI-8t-mmU"/>
+                                            <outlet property="magicDescriptionTextView" destination="gRY-JE-3cm" id="x3d-5J-oeT"/>
+                                            <outlet property="magicImage" destination="gno-rp-44e" id="ncE-qH-MEh"/>
+                                            <outlet property="magicLanguageLabel" destination="25h-jq-Z0G" id="q0k-0E-qCA"/>
+                                            <outlet property="magicNameLabel" destination="SLd-Ve-dpp" id="cZ1-ud-cSh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -349,7 +350,7 @@
                         <viewLayoutGuide key="safeArea" id="BnD-Ms-FFv"/>
                     </view>
                     <connections>
-                        <outlet property="detailMagicCollectionView" destination="cOw-c3-aPd" id="hGR-tw-7e7"/>
+                        <outlet property="detailMagicCollectionView" destination="cOw-c3-aPd" id="Pwp-N0-79n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke5-LV-Ed5" userLabel="First Responder" sceneMemberID="firstResponder"/>
