@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicCell" id="f7j-d1-bCx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicCell" id="f7j-d1-bCx" customClass="MagicCell" customModule="MagicCardsAndPokemonCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -53,6 +53,10 @@
                                             <constraint firstAttribute="bottom" secondItem="Kuk-x3-Qyc" secondAttribute="bottom" id="l43-gM-OoR"/>
                                             <constraint firstItem="Kuk-x3-Qyc" firstAttribute="leading" secondItem="f7j-d1-bCx" secondAttribute="leading" id="o0s-BR-j2G"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="mPl-ll-fTq" id="Y8M-ym-Sda"/>
+                                            <outlet property="magicCardImage" destination="Kuk-x3-Qyc" id="uu2-9b-rL1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -247,7 +251,7 @@
         <!--Magic Detail View Controller-->
         <scene sceneID="3zu-Mf-zr9">
             <objects>
-                <viewController id="uG9-xW-3sg" customClass="MagicDetailViewController" customModule="MagicCardsAndPokemonCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicDetail" id="uG9-xW-3sg" customClass="MagicDetailViewController" customModule="MagicCardsAndPokemonCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39h-b7-JJ3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,7 +270,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicDetailCell" id="aeQ-D4-Dn3">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicDetailCell" id="aeQ-D4-Dn3" customClass="MagicDetailCell" customModule="MagicCardsAndPokemonCards" customModuleProvider="target">
                                         <rect key="frame" x="1" y="0.0" width="298" height="505"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -288,7 +292,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gRY-JE-3cm">
                                                     <rect key="frame" x="28" y="343" width="242" height="139"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -321,6 +325,12 @@
                                             <constraint firstItem="AsL-Qa-lFp" firstAttribute="centerY" secondItem="gno-rp-44e" secondAttribute="centerY" id="jpx-me-pEm"/>
                                             <constraint firstItem="gno-rp-44e" firstAttribute="top" secondItem="aeQ-D4-Dn3" secondAttribute="top" constant="10" id="y3b-7i-r94"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="magicDescriptionTextView" destination="gRY-JE-3cm" id="S1M-fy-YKg"/>
+                                            <outlet property="magicImage" destination="gno-rp-44e" id="3Ma-np-ux7"/>
+                                            <outlet property="magicLanguageLabel" destination="25h-jq-Z0G" id="h4L-F0-FC9"/>
+                                            <outlet property="magicNameLabel" destination="SLd-Ve-dpp" id="0Nk-Xc-gbC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -338,6 +348,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BnD-Ms-FFv"/>
                     </view>
+                    <connections>
+                        <outlet property="detailMagicCollectionView" destination="cOw-c3-aPd" id="hGR-tw-7e7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke5-LV-Ed5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,6 +362,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eQN-Dd-MO5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sDQ-dZ-qGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

@@ -22,6 +22,8 @@
 		2E8250B621E6686100158E41 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250B521E6686100158E41 /* PokemonDetailViewController.swift */; };
 		2E8250B821E6691100158E41 /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250B721E6691100158E41 /* PokemonCard.swift */; };
 		2E8250BB21E6699300158E41 /* MagicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8250BA21E6699300158E41 /* MagicCard.swift */; };
+		D6CF476521E6BBF00071EEB0 /* MagicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF476421E6BBF00071EEB0 /* MagicCell.swift */; };
+		D6CF476721E6BBFC0071EEB0 /* MagicDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF476621E6BBFC0071EEB0 /* MagicDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		2E8250B521E6686100158E41 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		2E8250B721E6691100158E41 /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
 		2E8250BA21E6699300158E41 /* MagicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCard.swift; sourceTree = "<group>"; };
+		D6CF476421E6BBF00071EEB0 /* MagicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCell.swift; sourceTree = "<group>"; };
+		D6CF476621E6BBFC0071EEB0 /* MagicDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			children = (
 				2E8250B721E6691100158E41 /* PokemonCard.swift */,
 				2E8250BA21E6699300158E41 /* MagicCard.swift */,
+				D6CF476421E6BBF00071EEB0 /* MagicCell.swift */,
+				D6CF476621E6BBFC0071EEB0 /* MagicDetailCell.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -200,6 +206,8 @@
 			files = (
 				2E8250B821E6691100158E41 /* PokemonCard.swift in Sources */,
 				2E8250BB21E6699300158E41 /* MagicCard.swift in Sources */,
+				D6CF476721E6BBFC0071EEB0 /* MagicDetailCell.swift in Sources */,
+				D6CF476521E6BBF00071EEB0 /* MagicCell.swift in Sources */,
 				2E8250AE21E667AB00158E41 /* MagicAPIClient .swift in Sources */,
 				2E82509521E6657700158E41 /* MagicViewController.swift in Sources */,
 				2E8250B421E6684700158E41 /* PokemonViewController.swift in Sources */,
