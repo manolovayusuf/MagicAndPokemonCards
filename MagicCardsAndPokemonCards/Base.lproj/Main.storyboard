@@ -171,7 +171,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonDetailCell" id="lnG-FG-uMl" customClass="PokemonDetailCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonDetailCell" id="lnG-FG-uMl" customClass="PokemonDetailCell" customModule="MagicCardsAndPokemonCards" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="0.0" width="282" height="280"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -213,12 +213,11 @@
                                                     <constraint firstAttribute="trailingMargin" secondItem="mCA-Yu-g4j" secondAttribute="trailing" constant="1" id="zxz-7Q-DQO"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="pokemonAttack" destination="zSx-zz-MAT" id="9bA-t9-Bau"/>
-                                                    <outlet property="pokemonAttackDescription" destination="mCA-Yu-g4j" id="xq1-8Z-PBG"/>
-                                                    <outlet property="pokemonCardImage" destination="JyZ-V6-RZf" id="nFS-gZ-ujn"/>
-                                                    <outlet property="pokemonDamage" destination="MMH-x5-Sxg" id="vSo-EX-Ofm"/>
-                                                    <outlet property="pokemonIndicator" destination="0H2-2l-ujj" id="8fF-qv-3D4"/>
-                                                    <outlet property="pokemonView" destination="jqs-71-T1C" id="IzK-ln-3Bb"/>
+                                                    <outlet property="pokemonAttack" destination="zSx-zz-MAT" id="etO-DG-U6A"/>
+                                                    <outlet property="pokemonAttackDescription" destination="mCA-Yu-g4j" id="qYL-5o-5eM"/>
+                                                    <outlet property="pokemonCardImage" destination="JyZ-V6-RZf" id="fnr-cv-a9z"/>
+                                                    <outlet property="pokemonDamage" destination="MMH-x5-Sxg" id="K7z-TO-AQ9"/>
+                                                    <outlet property="pokemonIndicator" destination="0H2-2l-ujj" id="J37-XM-8pU"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -257,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sH-13-scA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640.8" y="842.36453201970448"/>
+            <point key="canvasLocation" x="1641" y="856"/>
         </scene>
         <!--Magic Detail View Controller-->
         <scene sceneID="3zu-Mf-zr9">

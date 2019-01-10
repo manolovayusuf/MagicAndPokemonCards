@@ -10,7 +10,6 @@ import UIKit
 
 class PokemonDetailCell: UICollectionViewCell {
     
-    @IBOutlet weak var pokemonView: UIView!
     @IBOutlet weak var pokemonCardImage: UIImageView!
     @IBOutlet weak var pokemonIndicator: UIActivityIndicatorView!
     @IBOutlet weak var pokemonAttack: UILabel!
