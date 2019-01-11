@@ -17,9 +17,10 @@ class MagicDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         detailMagicCollectionView.dataSource = self
         detailMagicCollectionView.delegate = self
+        
+        //print(languages)
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -29,13 +30,19 @@ class MagicDetailViewController: UIViewController {
 
 extension MagicDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return languages.count
+        return languages.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = detailMagicCollectionView.dequeueReusableCell(withReuseIdentifier: "MagicDetailCell", for: indexPath) as? MagicDetailCell else { fatalError("MagicDetailCell Not Found!") }
         
-        cell.configureCell(magicCard: <#T##MagicCard#>)
+        if indexPath.row == 0 { //English
+            cell.configureCell(magicCard: magicCard, foreignLanguage: nil)
+        } else { //Other languages
+            let language = languages[indexPath.row - 1]
+            cell.configureCell(magicCard: magicCard, foreignLanguage: language)
+        }
+        
         return cell
     }
 }

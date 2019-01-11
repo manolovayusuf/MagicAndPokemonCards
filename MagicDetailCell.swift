@@ -15,9 +15,29 @@ class MagicDetailCell: UICollectionViewCell {
     @IBOutlet weak var magicDescriptionTextView: UITextView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    public func configureCell(magicCard: MagicCard) {
-        magicNameLabel.text = magicCard.name
-        //magicLanguageLabel.text =
-        //magicDescriptionTextView.text =
+    public func configureCell(magicCard: MagicCard, foreignLanguage: MagicCard.Language?) {
+        if let foreignLanguage = foreignLanguage {
+            setMagicImage(url: foreignLanguage.imageUrl)
+            magicNameLabel.text = foreignLanguage.name
+            magicLanguageLabel.text = foreignLanguage.language
+            magicDescriptionTextView.text = foreignLanguage.text
+        } else {
+            setMagicImage(url: magicCard.imageUrl!)
+            magicNameLabel.text = magicCard.name
+            magicLanguageLabel.text = "English"
+            magicDescriptionTextView.text = magicCard.text
+        }
+    }
+    
+    private func setMagicImage(url: URL) {
+        activityIndicator.startAnimating()
+        ImageHelper.shared.fetchImage(urlString: url.absoluteString) { (appError, image) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let image = image {
+                self.magicImage.image = image
+            }
+            self.activityIndicator.stopAnimating()
+        }
     }
 }
