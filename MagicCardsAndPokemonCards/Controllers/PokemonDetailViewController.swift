@@ -11,6 +11,9 @@ import UIKit
 class PokemonDetailViewController: UIViewController {
     
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
     
     var pokemonCardInfo: PokemonCard!
