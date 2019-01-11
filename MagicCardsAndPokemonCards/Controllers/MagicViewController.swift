@@ -28,7 +28,7 @@ class MagicViewController: UIViewController {
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let magicCards = magicCards {
-                self.allMagicCards = magicCards
+                self.allMagicCards = magicCards.filter { $0.imageUrl != nil }
                 //dump(self.allMagicCards)
             }
         }
@@ -80,7 +80,7 @@ extension MagicViewController: UICollectionViewDelegate {
         
         guard let detailVC = mainStoryboard.instantiateViewController(withIdentifier: "MagicDetail") as? MagicDetailViewController else { return }
         
-        //need to set card to detail
+        detailVC.magicCard = allMagicCards[indexPath.row]
         detailVC.modalPresentationStyle = .overCurrentContext
         
         present(detailVC, animated: true, completion:  nil)

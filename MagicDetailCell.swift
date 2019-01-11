@@ -14,4 +14,10 @@ class MagicDetailCell: UICollectionViewCell {
     @IBOutlet weak var magicLanguageLabel: UILabel!
     @IBOutlet weak var magicDescriptionTextView: UITextView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    public func configureCell(magicCard: MagicCard) {
+        magicNameLabel.text = magicCard.name
+        //magicLanguageLabel.text =
+        //magicDescriptionTextView.text =
+    }
 }
