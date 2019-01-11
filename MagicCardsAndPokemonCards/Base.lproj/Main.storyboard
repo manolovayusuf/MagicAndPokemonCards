@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicCell" id="f7j-d1-bCx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicCell" id="f7j-d1-bCx" customClass="MagicCell" customModule="MagicCardsAndPokemonCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -38,8 +38,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kuk-x3-Qyc">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="131"/>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mPl-ll-fTq">
-                                                    <rect key="frame" x="66.666666666666671" y="47" width="37" height="37"/>
+
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mPl-ll-fTq">
+                                                    <rect key="frame" x="66.5" y="47" width="37" height="37"/>
+
+                                     
+
                                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -53,6 +57,10 @@
                                             <constraint firstAttribute="bottom" secondItem="Kuk-x3-Qyc" secondAttribute="bottom" id="l43-gM-OoR"/>
                                             <constraint firstItem="Kuk-x3-Qyc" firstAttribute="leading" secondItem="f7j-d1-bCx" secondAttribute="leading" id="o0s-BR-j2G"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="mPl-ll-fTq" id="Y8M-ym-Sda"/>
+                                            <outlet property="magicCardImage" destination="Kuk-x3-Qyc" id="CmW-o5-IPM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -271,11 +279,13 @@
         <!--Magic Detail View Controller-->
         <scene sceneID="3zu-Mf-zr9">
             <objects>
-                <viewController id="uG9-xW-3sg" customClass="MagicDetailViewController" customModule="MagicCardsAndPokemonCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicDetail" id="uG9-xW-3sg" customClass="MagicDetailViewController" customModule="MagicCardsAndPokemonCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39h-b7-JJ3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
+
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOw-nH-udI">
                                 <rect key="frame" x="37.666666666666657" y="106.66666666666669" width="300" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,20 +358,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cOw-c3-aPd" firstAttribute="height" secondItem="MOw-nH-udI" secondAttribute="height" id="4iJ-yh-Wt6"/>
-                            <constraint firstItem="MOw-nH-udI" firstAttribute="height" secondItem="39h-b7-JJ3" secondAttribute="height" multiplier="0.75" id="Brq-86-wjK"/>
-                            <constraint firstItem="cOw-c3-aPd" firstAttribute="centerX" secondItem="BnD-Ms-FFv" secondAttribute="centerX" id="Ceg-Ov-lw2"/>
-                            <constraint firstItem="MOw-nH-udI" firstAttribute="width" secondItem="39h-b7-JJ3" secondAttribute="width" multiplier="0.8" id="H4o-1K-XkZ"/>
-                            <constraint firstItem="MOw-nH-udI" firstAttribute="centerX" secondItem="BnD-Ms-FFv" secondAttribute="centerX" id="XVA-wu-xow"/>
-                            <constraint firstItem="MOw-nH-udI" firstAttribute="centerY" secondItem="BnD-Ms-FFv" secondAttribute="centerY" id="ka9-Cf-vwh"/>
-                            <constraint firstItem="cOw-c3-aPd" firstAttribute="width" secondItem="MOw-nH-udI" secondAttribute="width" id="lf6-RZ-eCG"/>
-                            <constraint firstItem="cOw-c3-aPd" firstAttribute="centerY" secondItem="BnD-Ms-FFv" secondAttribute="centerY" id="pI7-8t-ifM"/>
+                            <constraint firstItem="tb3-LY-NvK" firstAttribute="centerY" secondItem="BnD-Ms-FFv" secondAttribute="centerY" id="8vk-RJ-sGJ"/>
+                            <constraint firstItem="3TZ-tL-J89" firstAttribute="bottom" secondItem="BnD-Ms-FFv" secondAttribute="bottom" id="D48-Rh-kNs"/>
+                            <constraint firstItem="tb3-LY-NvK" firstAttribute="height" secondItem="39h-b7-JJ3" secondAttribute="height" multiplier="0.75" id="IRu-XD-xp4"/>
+                            <constraint firstItem="tb3-LY-NvK" firstAttribute="centerX" secondItem="BnD-Ms-FFv" secondAttribute="centerX" id="LKa-fT-dR4"/>
+                            <constraint firstItem="3TZ-tL-J89" firstAttribute="trailing" secondItem="BnD-Ms-FFv" secondAttribute="trailing" id="Odt-da-M4C"/>
+                            <constraint firstItem="3TZ-tL-J89" firstAttribute="leading" secondItem="BnD-Ms-FFv" secondAttribute="leading" id="Qjd-Uu-JcM"/>
+                            <constraint firstItem="tb3-LY-NvK" firstAttribute="width" secondItem="39h-b7-JJ3" secondAttribute="width" multiplier="0.8" id="j0l-c4-skd"/>
+                            <constraint firstItem="3TZ-tL-J89" firstAttribute="top" secondItem="BnD-Ms-FFv" secondAttribute="top" id="pn5-YV-Ezp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BnD-Ms-FFv"/>
                     </view>
+                    <connections>
+                        <outlet property="detailMagicCollectionView" destination="5cA-RQ-WKV" id="N2v-Np-14Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke5-LV-Ed5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

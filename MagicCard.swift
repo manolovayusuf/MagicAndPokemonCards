@@ -8,11 +8,13 @@
 
 import Foundation
 
-struct BoxOfMagicCards: Codable {
-    let cards: [MagicCard]
-}
+
 
 struct MagicCard: Codable {
+    
+    struct BoxOfMagicCards: Codable {
+        let cards: [MagicCard]
+    }
     
     let name: String
     let text: String
