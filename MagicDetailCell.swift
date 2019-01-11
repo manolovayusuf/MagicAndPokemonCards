@@ -30,14 +30,19 @@ class MagicDetailCell: UICollectionViewCell {
     }
     
     private func setMagicImage(url: URL) {
-        activityIndicator.startAnimating()
-        ImageHelper.shared.fetchImage(urlString: url.absoluteString) { (appError, image) in
-            if let appError = appError {
-                print(appError.errorMessage())
-            } else if let image = image {
-                self.magicImage.image = image
+        
+        if let image = ImageHelper.shared.image(forKey: url.absoluteString as NSString){
+            self.magicImage.image = image
+        } else {
+            activityIndicator.startAnimating()
+            ImageHelper.shared.fetchImage(urlString: url.absoluteString) { (appError, image) in
+                if let appError = appError {
+                    print(appError.errorMessage())
+                } else if let image = image {
+                    self.magicImage.image = image
+                }
+                self.activityIndicator.stopAnimating()
             }
-            self.activityIndicator.stopAnimating()
         }
     }
 }

@@ -45,24 +45,7 @@ extension MagicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = magicCollectionView.dequeueReusableCell(withReuseIdentifier: "MagicCell", for: indexPath) as? MagicCell else { fatalError("MagicCell not found") }
         let magicCard = allMagicCards[indexPath.row]
-        
-
-        if let imageUrl = magicCard.imageUrl {
-            if let image = ImageHelper.shared.image(forKey: imageUrl.absoluteString as NSString) {
-                cell.magicCardImage.image = image
-            } else {
-                cell.activityIndicator.startAnimating()
-                ImageHelper.shared.fetchImage(urlString: imageUrl.absoluteString) { (appError, image) in
-                    if let appError = appError {
-                        print(appError.errorMessage())
-                    } else if let image = image {
-                        cell.magicCardImage.image = image
-                    }
-                    cell.activityIndicator.stopAnimating()
-                }
-            }
-        }
-        
+        cell.configureCell(magicCard: magicCard)
         return cell
     }
 }
