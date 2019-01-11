@@ -13,6 +13,8 @@ class PokemonDetailViewController: UIViewController {
     
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
     
+    var pokemonCardInfo: PokemonCard!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,30 @@ class PokemonDetailViewController: UIViewController {
 
 extension PokemonDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return pokemonCardInfo.attacks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "PokemonDetailCell", for: indexPath) as? PokemonDetailCell else { fatalError("PokemonDetailCell not found") }
+        
+        //set the pokemonCardImage
+        ImageHelper.shared.fetchImage(urlString: pokemonCardInfo.imageUrlHiRes!.absoluteString) { (appError, image) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let image = image {
+                cell.imageOfPokemon.image = image
+            }
+        }
+        
+        cell.pokemonAttack.text = pokemonCardInfo.attacks[indexPath.row].name
+        cell.pokemonDamage.text = pokemonCardInfo.attacks[indexPath.row].damage
+        cell.pokemonAttackDescription.text = pokemonCardInfo.attacks[indexPath.row].text
+        
         return cell
     }
 }
 extension PokemonDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 150, height: 150)
+        return CGSize.init(width: 282, height: 280)
     }
 }

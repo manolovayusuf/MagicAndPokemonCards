@@ -74,6 +74,7 @@ extension PokemonViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         guard let detailViewController = mainStoryboard.instantiateViewController(withIdentifier: "PokemonDetail") as? PokemonDetailViewController else { return }
+        detailViewController.pokemonCardInfo = pokemonCardArray[indexPath.row]
         detailViewController.modalPresentationStyle = .overCurrentContext
         present(detailViewController, animated: true, completion: nil)
     }
