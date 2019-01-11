@@ -11,17 +11,15 @@ import Foundation
 struct AllPokemonCards: Codable {
     let cards: [PokemonCard]
 }
-struct PokemonCard: Codable {
-    
-    let imageUrl: URL
-    let imageUrlHiRes: URL
+
+struct PokemonCard: Codable {    
+    let imageUrl: URL?
+    let imageUrlHiRes: URL?
     
     struct PokemonAttacks: Codable {
         let name: String
         let text: String
-        let damage: Int
-        
+        let damage: String
     }
-    
     let attacks: [PokemonAttacks]
 }

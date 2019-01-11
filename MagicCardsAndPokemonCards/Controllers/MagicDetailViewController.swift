@@ -17,6 +17,7 @@ class MagicDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         detailMagicCollectionView.dataSource = self
         detailMagicCollectionView.delegate = self
         
@@ -51,4 +52,8 @@ extension MagicDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: 300, height: 500)
     }
+
+
+  
+
 }

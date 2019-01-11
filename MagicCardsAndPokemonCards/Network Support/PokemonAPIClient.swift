@@ -11,6 +11,7 @@ import Foundation
 final class PokemonAPIClient {
     public static func getAllPokemonCards(completionHandler: @escaping (AppError?, [PokemonCard]?) -> Void) {
         let urlString = "https://api.pokemontcg.io/v1/cards?contains=imageUrl,imageUrlHiRes,attacks"
+        
         NetworkHelper.shared.performDataTask(endpointURLString: urlString) { (appError, data, httpResponse) in
             if let appError = appError {
                 completionHandler(appError, nil)

@@ -11,6 +11,7 @@ import UIKit
 class MagicViewController: UIViewController {
     
     @IBOutlet weak var magicCollectionView: UICollectionView!
+
     var allMagicCards = [MagicCard]() {
         didSet {
             DispatchQueue.main.async {
@@ -18,7 +19,9 @@ class MagicViewController: UIViewController {
             }
         }
     }
+
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         magicCollectionView.dataSource = self
@@ -33,8 +36,6 @@ class MagicViewController: UIViewController {
             }
         }
     }
-
-
 }
 
 extension MagicViewController: UICollectionViewDataSource {
